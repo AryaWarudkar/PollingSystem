@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Login</title>
-    <link rel="stylesheet" href="background.css"> <!-- Update the path accordingly -->
+    <link rel="stylesheet" href="background.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        .animate-tilt {
+            animation: tilt 10s infinite linear;
+        }
+
+        @keyframes tilt {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(2deg);
+            }
+        }
+    </style>
 </head>
-<body class="bg-gray-100 flex justify-center items-center h-screen relative">
-    
-    <!-- Background animation -->
+
+<body class="bg-gray-900 text-white">
     <div class="area">
         <ul class="circles">
             <li></li>
@@ -22,26 +43,50 @@
             <li></li>
             <li></li>
             <li></li>
+            <li></li>
+            <li></li>
         </ul>
     </div>
-    
-    <!-- User login form -->
-    <div class="w-full max-w-sm bg-white rounded-lg shadow-md p-8 z-10">
-        <h2 class="text-2xl font-bold mb-6 text-center">User Login</h2>
-        <form>
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
-                <input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" type="email" id="email" placeholder="Enter your email" required>
-            </div>
-            <div class="mb-6">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="password">Password</label>
-                <input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" type="password" id="password" placeholder="Enter your password" required>
-            </div>
-            <div class="flex items-center justify-between">
-                <button class="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500" type="submit">Login</button>
-            </div>
-        </form>
-    </div>
 
+    <!-- user login -->
+    <div class="flex justify-center items-center h-screen">
+        <div class="w-full max-w-sm bg-white rounded-lg shadow-md p-8">
+            <h2 class="text-black text-2xl font-bold mb-6 text-center">User Login</h2>
+            <form>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Username</label>
+                    <input
+                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        type="email" id="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
+                    <input
+                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="password">Password</label>
+                    <input
+                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <div class="w-full flex justify-center pr-1">
+                    <div class="relative inline-flex group">
+                        <div
+                            class="absolute transition-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt">
+                        </div>
+                        <a href="#" title="Login"
+                            class="relative inline-flex items-center justify-center px-10 py-4 text-lg font-bold text-white transition-all duration-200 bg-gray-900 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 shadow-green-glow">
+                            Login
+                        </a>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
+
 </html>
